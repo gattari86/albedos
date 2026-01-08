@@ -19,11 +19,6 @@
     --dark-gray: #333333;
     --text-gray: #5a6570;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-teal) 100%);
-    --gradient-accent: linear-gradient(135deg, var(--purple) 0%, var(--pink-coral) 100%);
-    --gradient-success: linear-gradient(135deg, var(--accent-teal) 0%, var(--turquoise) 100%);
-
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(44, 84, 132, 0.08);
     --shadow-md: 0 4px 20px rgba(44, 84, 132, 0.12);
@@ -115,7 +110,7 @@ h2.section-title {
 .logo-icon {
     width: 44px;
     height: 44px;
-    background: var(--gradient-primary);
+    background: var(--primary-blue);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -146,9 +141,9 @@ h2.section-title {
     font-weight: 500;
 }
 
-/* Hero Section */
+/* Hero Section - FLAT COLOR */
 .hero {
-    background: var(--gradient-primary);
+    background: var(--primary-blue);
     padding: 160px 0 100px;
     text-align: center;
     position: relative;
@@ -280,7 +275,7 @@ h2.section-title {
 }
 
 .option-badge.featured {
-    background: var(--gradient-success);
+    background: var(--turquoise);
 }
 
 .featured-label {
@@ -348,7 +343,7 @@ h2.section-title {
 
 /* Pricing Block */
 .pricing-block {
-    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    background: var(--light-gray);
     border: 1px solid var(--medium-gray);
     border-radius: 16px;
     padding: 24px;
@@ -378,6 +373,7 @@ h2.section-title {
 .price-label {
     font-size: 0.95rem;
     color: var(--text-gray);
+    flex: 1;
 }
 
 .price-value {
@@ -390,6 +386,31 @@ h2.section-title {
     font-size: 0.85rem;
     color: var(--text-gray);
     margin-left: 4px;
+}
+
+/* Price Total */
+.price-total {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 16px 0;
+    margin-top: 8px;
+    border-top: 2px solid var(--accent-teal);
+    background: rgba(71, 163, 194, 0.08);
+    margin: 12px -24px 0;
+    padding: 16px 24px;
+    border-radius: 0 0 12px 12px;
+}
+
+.price-total .price-label {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.price-total .price-value {
+    font-size: 2rem;
+    color: var(--primary-blue);
 }
 
 .price-commitment {
@@ -416,6 +437,19 @@ h2.section-title {
 
 .included-category {
     margin-bottom: 20px;
+}
+
+.included-category.highlight-category {
+    background: rgba(71, 163, 194, 0.1);
+    border-left: 4px solid var(--accent-teal);
+    padding: 16px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 24px;
+}
+
+.included-category.highlight-category h5 {
+    color: var(--primary-blue);
+    font-size: 1rem;
 }
 
 .included-category h5 {
@@ -486,7 +520,7 @@ h2.section-title {
     display: block;
     width: 100%;
     padding: 18px 30px;
-    background: var(--gradient-primary);
+    background: var(--primary-blue);
     color: var(--white);
     text-decoration: none;
     text-align: center;
@@ -500,21 +534,154 @@ h2.section-title {
 .accept-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 30px rgba(44, 84, 132, 0.4);
+    background: #234570;
 }
 
 .accept-btn.featured {
-    background: var(--gradient-success);
+    background: var(--turquoise);
     box-shadow: 0 4px 20px rgba(48, 209, 176, 0.3);
 }
 
 .accept-btn.featured:hover {
     box-shadow: 0 6px 30px rgba(48, 209, 176, 0.4);
+    background: #28b89a;
+}
+
+/* Ad Spend Section */
+.ad-spend {
+    padding: var(--section-padding);
+    background: var(--white);
+}
+
+.ad-spend-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ad-spend-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(255, 107, 139, 0.08);
+    border: 1px solid rgba(255, 107, 139, 0.2);
+    border-left: 4px solid var(--pink-coral);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+}
+
+.notice-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--pink-coral);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.notice-text {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.ad-spend-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .ad-spend-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ad-spend-card {
+    background: var(--light-gray);
+    border-radius: 16px;
+    padding: 30px;
+}
+
+.ad-spend-card h4 {
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.ad-budget-range {
+    text-align: center;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.budget-amount {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.budget-note {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.ad-spend-card p {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.benchmarks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.benchmark-item {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+}
+
+.benchmark-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.benchmark-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.benchmark-source {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    font-style: italic;
+    text-align: center;
+    margin-top: 8px;
 }
 
 /* Timeline Section */
 .timeline {
     padding: var(--section-padding);
-    background: var(--white);
+    background: var(--light-gray);
 }
 
 .timeline-grid {
@@ -530,7 +697,7 @@ h2.section-title {
 }
 
 .timeline-item {
-    background: var(--light-gray);
+    background: var(--white);
     border-radius: 16px;
     padding: 30px;
     position: relative;
@@ -545,7 +712,21 @@ h2.section-title {
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
+}
+
+.timeline-badge {
+    display: inline-block;
+    background: rgba(48, 209, 176, 0.15);
+    color: #1a8a73;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 8px;
+    margin-bottom: 12px;
 }
 
 .timeline-item h4 {
@@ -576,10 +757,10 @@ h2.section-title {
     border-radius: 50%;
 }
 
-/* Quarterly Section */
+/* Quarterly Section - FLAT COLOR */
 .quarterly {
     padding: var(--section-padding);
-    background: var(--gradient-primary);
+    background: var(--primary-blue);
 }
 
 .quarterly .section-title {
@@ -628,7 +809,7 @@ h2.section-title {
 /* Not Section */
 .not-section {
     padding: var(--section-padding);
-    background: var(--light-gray);
+    background: var(--white);
 }
 
 .not-grid {
@@ -674,7 +855,7 @@ h2.section-title {
 /* Recommendation Section */
 .recommendation {
     padding: var(--section-padding);
-    background: var(--white);
+    background: var(--light-gray);
 }
 
 .recommendation-cards {
@@ -692,7 +873,7 @@ h2.section-title {
 }
 
 .rec-card {
-    background: var(--light-gray);
+    background: var(--white);
     border-radius: 16px;
     padding: 30px;
     text-align: center;
@@ -711,10 +892,10 @@ h2.section-title {
     line-height: 1.6;
 }
 
-/* CTA Section */
+/* CTA Section - FLAT COLOR */
 .cta {
     padding: var(--section-padding);
-    background: var(--gradient-accent);
+    background: var(--accent-teal);
     text-align: center;
 }
 
@@ -858,6 +1039,19 @@ h2.section-title {
 
     .footer-contact p {
         text-align: center;
+    }
+
+    .ad-spend-notice {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .notice-icon {
+        margin: 0 auto;
+    }
+
+    .benchmarks {
+        grid-template-columns: 1fr;
     }
 }
 
